@@ -14,6 +14,6 @@
     <button type="submit" value="LOGIN">Log In</button>
     
     <br>
-    <p>Don't have account? <a href="<?= base_url() ?>Registrasi">daftar</a></p>
+    <p>Don't have account? <a href="<?= base_url() ?>Registrasi">Sign Up</a></p>
 </body>
 </html>
