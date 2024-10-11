@@ -8,7 +8,7 @@
 <body>
     <h1>Halaman Registrasi</h1>
 
-        <form action="" method="POST">
+        <form action="<?= base_url() ?>Registrasi/simpan" method="POST">
 
         <input type="text" name="nama" placeholder="Nama Lengkap">  <br><br>
 
@@ -16,7 +16,7 @@
 
         <input type="password" name="password" placeholder="Password">  <br> <br>
 
-        <input type="submit" value="SIMPAN">
+        <button type="submit">Daftar</button>
     </form>
 </body>
 </html>
