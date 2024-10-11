@@ -32,6 +32,7 @@ function salam($nama) {
 </head>
 <body>
     <h1>Beranda</h1>
-    <h3><i><?= salam('Admin') ?></i></h3>
+    <h3><i><?= salam('Admin') ?></i></h3><br>
+    <a href="<?= base_url() ?>Login/logout">Log Out</a>
 </body>
 </html>
