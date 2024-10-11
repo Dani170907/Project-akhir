@@ -8,10 +8,13 @@
 <body>
     <h1>Login Page</h1>
     
-    <input type="text" placeholder="masukan username" name="username"> <br><br>
-    <input type="password" placeholder="masukan password" name="password"> <br><br>
-    
-    <button type="submit" value="LOGIN">Log In</button>
+    <form action="<?= base_url() ?>Login/verifikasi" method="POST">
+
+        <input type="text" placeholder="masukan username" name="username"> <br><br>
+        <input type="password" placeholder="masukan password" name="password"> <br><br>
+        
+        <button type="submit">Log In</button>
+    </form>
     
     <br>
     <p>Don't have account? <a href="<?= base_url() ?>Registrasi">Sign Up</a></p>
