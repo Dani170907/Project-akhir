@@ -38,5 +38,5 @@ function salam($nama) {
     <ul>
         <li><a href="<?= base_url('admin/beranda') ?>">Beranda</a></li>
         <li><a href="<?= base_url('admin/pendaftaran') ?>">Daftar Lomba</a></li>
-        <li><a href="<?= base_url('admin/event') ?>">About Us</a></li>
+        <li><a href="<?= base_url('admin/event') ?>">Event</a></li>
     </ul>

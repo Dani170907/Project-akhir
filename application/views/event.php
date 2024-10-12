@@ -28,7 +28,7 @@ function salam($nama) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Beranda</title>
+    <title>Event</title>
 </head>
 <body>
     <h1>Beranda</h1>
@@ -38,5 +38,5 @@ function salam($nama) {
     <ul>
         <li><a href="<?= base_url('admin/beranda') ?>">Beranda</a></li>
         <li><a href="<?= base_url('admin/pendaftaran') ?>">Daftar Lomba</a></li>
-        <li><a href="<?= base_url('admin/event') ?>">About Us</a></li>
+        <li><a href="<?= base_url('admin/event') ?>">Event</a></li>
     </ul>
