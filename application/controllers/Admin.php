@@ -8,7 +8,7 @@ class Admin extends CI_Controller {
     }
 
     public function beranda() {
-        // $this->load->view('templates/admin_header');
+        $this->load->view('templates/admin_header');
         $this->load->view('admin');
     }
 
