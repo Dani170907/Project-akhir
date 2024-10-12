@@ -31,7 +31,7 @@ function salam($nama) {
     <title>Beranda</title>
 </head>
 <body>
-    <h1>Beranda</h1>
+    <h1>Daftar Lomba</h1>
     <h3><i><?= salam('Admin') ?></i></h3><br>
     <a href="<?= base_url() ?>Login/logout">Log Out</a>
 
