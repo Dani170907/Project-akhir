@@ -31,12 +31,12 @@ function salam($nama) {
     <title>Beranda</title>
 </head>
 <body>
-    <h1>Daftar Lomba</h1>
+    <h1>Beranda</h1>
     <h3><i><?= salam('Admin') ?></i></h3><br>
     <a href="<?= base_url() ?>Login/logout">Log Out</a>
 
     <ul>
         <li><a href="<?= base_url('admin/beranda') ?>">Beranda</a></li>
-        <li><a href="<?= base_url('admin/daftarLomba') ?>">Daftar Lomba</a></li>
-        <li><a href="<?= base_url('admin/aboutUs') ?>">About Us</a></li>
+        <li><a href="<?= base_url('admin/pendaftaran') ?>">Daftar Lomba</a></li>
+        <li><a href="<?= base_url('admin/event') ?>">About Us</a></li>
     </ul>

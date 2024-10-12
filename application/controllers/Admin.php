@@ -12,8 +12,12 @@ class Admin extends CI_Controller {
         $this->load->view('admin');
     }
 
-    public function daftarLomba() {
-        $this->load->view('lomba');
+    public function pendaftaran() {
+        $this->load->view('pendaftaran');
+    }
+
+    public function event() {
+        $this->load->view('event');
     }
 
 }
