@@ -9,6 +9,12 @@
 <body>
 
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="https://picsum.photos/1920/920" alt=""
+            class="w-full h-full object-cover filter blur-lg brightness-50">
+    </div>
+
     <div class="relative z-10 bg-white p-8 rounded-md shadow-lg">
         <h1 class="text-xl font-bold mb-4">Login</h1>
         <form action="<?= base_url() ?>Login/verifikasi" method="POST">
@@ -26,7 +32,7 @@
             </div>
             <div class="flex items-center justify-between gap-8">
                 <button
-                    class=""
+                    class="bg-cyan-500 hover:bg-cyan-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
                     type="submit">
                     Sign In
                 </button>
