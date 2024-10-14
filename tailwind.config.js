@@ -1,10 +1,10 @@
-/** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './application/views/**/*.php', // Menargetkan semua file PHP di dalam folder views
+    './application/views/**/*.php', // Tambahkan path ke semua file view di dalam folder views
+    './assets/**/*.html',
   ],
   theme: {
     extend: {},
   },
   plugins: [],
-};
+}
