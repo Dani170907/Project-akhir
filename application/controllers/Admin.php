@@ -11,12 +11,14 @@ class Admin extends CI_Controller {
         $this->load->view('templates/admin_header');
         $this->load->view('admin');
     }
-
+    
     public function pendaftaran() {
+        $this->load->view('templates/admin_header');
         $this->load->view('pendaftaran');
     }
-
+    
     public function event() {
+        $this->load->view('templates/admin_header');
         $this->load->view('event');
     }
 
