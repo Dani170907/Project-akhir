@@ -19,14 +19,14 @@ class Login extends CI_Controller {
                     'username' => $user['username'],
                 ];
                 $this->session->set_userdata($data);
-                redirect('admin');
+                redirect('Admin');
             } else {
                 $this->session->set_flashdata('message', 'Password salah');
-                redirect('login');
+                redirect('Login');
             }
         } else {
             $this->session->set_flashdata('message', 'Username tidak ditemukan');
-            redirect('login');
+            redirect('Login');
         }
     }
 
@@ -34,6 +34,6 @@ class Login extends CI_Controller {
         $this->session->unset_userdata('username');
 
         $this->session->set_flashdata('message', 'Logout Success');
-        redirect('login');
+        redirect('Login');
     }
 }
