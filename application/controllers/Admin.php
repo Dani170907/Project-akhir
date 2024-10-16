@@ -23,8 +23,15 @@ class Admin extends CI_Controller {
     }
     
     public function event() {
+        $this->load->model('EventModel');
         $this->load->view('templates/admin_header');
-        $this->load->view('event');
+        $data['tb_jns_lomba'] = $this->EventModel->getEvents();
+        $this->load->view('event', $data);
+    }
+
+    public function hapus($id) {
+        $this->db->delete('tb_jns_lomba', ['id' => $id]) ;
+        redirect('admin/event');
     }
 
 }
