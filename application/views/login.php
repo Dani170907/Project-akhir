@@ -12,10 +12,10 @@
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
         <img src="https://picsum.photos/1920/920" alt=""
-            class="w-full h-full object-cover filter blur-lg brightness-50">
+        class="w-full h-full object-cover filter blur-lg brightness-100">
     </div>
 
-    <div class="relative z-10 bg-white p-8 rounded-md shadow-lg">
+    <div class="relative z-10 bg-white p-8 rounded-md shadow-lg w-full max-w-sm lg:max-w-lg">
         <h1 class="text-xl font-bold mb-4">Login</h1>
         <form action="<?= base_url() ?>Login/verifikasi" method="POST">
             <div class="mb-4">
