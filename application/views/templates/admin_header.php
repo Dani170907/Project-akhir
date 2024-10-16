@@ -21,6 +21,8 @@
       $currentTime = getWaktu();
       return "Selamat $currentTime, $nama!";
   }
+
+  $currentPage = uri_string();
   
 ?>
 <!DOCTYPE html>
@@ -28,109 +30,119 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="<?php echo base_url('assets/admin.css')?>">
+    
     <link href="<?= base_url('assets/css/output.css'); ?>" rel="stylesheet">
     <title>Halaman Admin</title>
 </head>
 <body>
-<!-- First navbar -->
-<!-- Main navigation container -->
-<nav
-  class="relative flex w-full flex-nowrap items-center justify-between bg-primary py-2 shadow-dark-mild lg:flex-wrap lg:justify-start lg:py-4"
-  data-twe-navbar-ref>
-  <div class="flex w-full flex-wrap items-center justify-between px-3">
-    <div class="mx-2">
-      <a class="text-xl text-neutral-100" href="#">Navbar</a>
-    </div>
-    <!-- Hamburger button for mobile view -->
-    <button
-      class="block border-0 bg-transparent px-2 text-neutral-300 hover:no-underline hover:shadow-none focus:no-underline focus:shadow-none focus:outline-none focus:ring-0 dark:text-neutral-200 lg:hidden"
-      type="button"
-      data-twe-collapse-init
-      data-twe-target="#navbarSupportedContent9"
-      aria-controls="navbarSupportedContent9"
-      aria-expanded="false"
-      aria-label="Toggle navigation">
-      <!-- Hamburger icon -->
-      <span
-        class="[&>svg]:w-7 [&>svg]:stroke-black/50 dark:[&>svg]:stroke-neutral-200">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24"
-          fill="currentColor">
-          <path
-            fill-rule="evenodd"
-            d="M3 6.75A.75.75 0 013.75 6h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 6.75zM3 12a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75A.75.75 0 013 12zm0 5.25a.75.75 0 01.75-.75h16.5a.75.75 0 010 1.5H3.75a.75.75 0 01-.75-.75z"
-            clip-rule="evenodd" />
-        </svg>
-      </span>
-    </button>
+<!-- component -->
+<body class="bg-gray-100">
+	<nav class="relative px-4 py-4 flex justify-between items-center bg-white">
+		<a class="text-3xl font-bold leading-none" href="#">
+      <img src="<?= base_url('assets/images/SA.png') ?>" alt="Logo" class="h-12">
+		</a>
+		<div class="lg:hidden">
+			<button class="navbar-burger flex items-center text-blue-600 p-3">
+				<svg class="block h-4 w-4 fill-current" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+					<title>Mobile menu</title>
+					<path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
+				</svg>
+			</button>
+		</div>
+		<ul class="hidden absolute top-1/2 left-1/2 transform -translate-y-1/2 -translate-x-1/2 lg:flex lg:mx-auto lg:flex lg:items-center lg:w-auto lg:space-x-6">
+			<li><a class="text-sm <?= ($currentPage == 'admin/beranda') ? 'text-blue-600 font-bold' : 'text-gray-400' ?> hover:text-gray-500" href="<?= base_url('admin/beranda') ?>">Beranda</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm <?= ($currentPage == 'admin/pendaftaran') ? 'text-blue-600 font-bold' : 'text-gray-400' ?> hover:text-gray-500" href="<?= base_url('admin/pendaftaran') ?>">Pendaftaran</a></li>
+			<li class="text-gray-300">
+				<svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" class="w-4 h-4 current-fill" viewBox="0 0 24 24">
+					<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 5v0m0 7v0m0 7v0m0-13a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2zm0 7a1 1 0 110-2 1 1 0 010 2z" />
+				</svg>
+			</li>
+			<li><a class="text-sm <?= ($currentPage == 'admin/event') ? 'text-blue-600 font-bold' : 'text-gray-400' ?> hover:text-gray-500" href="<?= base_url('admin/event') ?>">Event</a></li>
+			</li>
+		</ul>
+		<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-50 font-semibold rounded-xl transition duration-200" href="<?= base_url() ?>Login/logout">Log Out</a>
+	</nav>
+	<div class="navbar-menu relative z-50 hidden">
+		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
+		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
+			<div class="flex items-center mb-8">
+				<a class="mr-auto text-3xl font-bold leading-none" href="#">
+          <img src="<?= base_url('assets/images/SA.png') ?>" alt="Logo" class="h-12">
+				</a>
+				<button class="navbar-close">
+					<svg class="h-6 w-6 text-gray-400 cursor-pointer hover:text-gray-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+					</svg>
+				</button>
+			</div>
+			<div>
+				<ul>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="<?= base_url('admin/beranda') ?>">Beranda</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href<?= base_url('admin/pendaftaran') ?>">Pendaftaran</a>
+					</li>
+					<li class="mb-1">
+						<a class="block p-4 text-sm font-semibold text-gray-400 hover:bg-blue-50 hover:text-blue-600 rounded" href="<?= base_url('admin/event') ?>">Event</a>
+					</li>
+				</ul>
+			</div>
+			<div class="mt-auto">
+				<div class="pt-6">
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Login/logout">Log Out</a>
+				</div>
+			</div>
+		</nav>
+	</div>
+</body>
 
-    <!-- Collapsible navbar container -->
-    <div
-      class="!visible mt-2 hidden flex-grow basis-[100%] items-center lg:mt-0 lg:!flex lg:basis-auto"
-      id="navbarSupportedContent9"
-      data-twe-collapse-item>
-      <!-- Left links -->
-      <ul
-        class="list-style-none me-auto flex flex-col ps-0 lg:mt-1 lg:flex-row"
-        data-twe-navbar-nav-ref>
-        <!-- Home link -->
-        <li
-          class="my-4 ps-2 lg:my-0 lg:pe-1 lg:ps-2"
-          data-twe-nav-item-ref>
-          <a
-            class="text-neutral-300 transition duration-200 hover:text-neutral-200 hover:ease-in-out focus:text-neutral-200 active:text-black/80 motion-reduce:transition-none lg:px-2"
-            aria-current="page"
-            href="#"
-            data-twe-nav-link-ref
-            >Home</a
-          >
-        </li>
-        <!-- Features link -->
-        <li
-          class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0"
-          data-twe-nav-item-ref>
-          <a
-            class="p-0 text-neutral-300 transition duration-200 hover:text-neutral-200 hover:ease-in-out focus:text-neutral-200 active:text-black/80 motion-reduce:transition-none lg:px-2"
-            href="#"
-            data-twe-nav-link-ref
-            >Features</a
-          >
-        </li>
-        <!-- Pricing link -->
-        <li
-          class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0"
-          data-twe-nav-item-ref>
-          <a
-            class="p-0 text-neutral-300 transition duration-200 hover:text-neutral-200 hover:ease-in-out focus:text-neutral-200 active:text-black/80 motion-reduce:transition-none lg:px-2"
-            href="#"
-            data-twe-nav-link-ref
-            >Pricing</a
-          >
-        </li>
-        <!-- About link -->
-        <li
-          class="mb-4 ps-2 lg:mb-0 lg:pe-1 lg:ps-0"
-          data-twe-nav-item-ref>
-          <a
-            class="p-0 text-neutral-300 transition duration-200 hover:text-neutral-200 hover:ease-in-out focus:text-neutral-200 active:text-black/80 motion-reduce:transition-none lg:px-2"
-            href="#"
-            data-twe-nav-link-ref
-            >About</a
-          >
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>
+<script>
+// Burger menus
+document.addEventListener('DOMContentLoaded', function() {
+    // open
+    const burger = document.querySelectorAll('.navbar-burger');
+    const menu = document.querySelectorAll('.navbar-menu');
 
-      <h3 class="text-center bg-blue-600"><i><?= salam('Admin') ?></i></h3><br>
-      <a href="<?= base_url() ?>Login/logout">Log Out</a>
-  
-      <ul>
-          <li><a href="<?= base_url('admin/beranda') ?>">Beranda</a></li>
-          <li><a href="<?= base_url('admin/pendaftaran') ?>">Daftar Lomba</a></li>
-          <li><a href="<?= base_url('admin/event') ?>">Event</a></li>
-      </ul>
-  
+    if (burger.length && menu.length) {
+        for (var i = 0; i < burger.length; i++) {
+            burger[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    // close
+    const close = document.querySelectorAll('.navbar-close');
+    const backdrop = document.querySelectorAll('.navbar-backdrop');
+
+    if (close.length) {
+        for (var i = 0; i < close.length; i++) {
+            close[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+
+    if (backdrop.length) {
+        for (var i = 0; i < backdrop.length; i++) {
+            backdrop[i].addEventListener('click', function() {
+                for (var j = 0; j < menu.length; j++) {
+                    menu[j].classList.toggle('hidden');
+                }
+            });
+        }
+    }
+});
+</script>
+
+      <h3 class="text-center"><i><?= salam('Admin') ?></i></h3><br>
