@@ -151,5 +151,3 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <h3 class="text-center"><i><?= salam($tb_user['nama']) ?></i></h3><br>
-<a href="<?= base_url() ?>Profile/editProfile"> Edit profile</a>
-<a href="<?= base_url() ?>Profile/">profile</a>

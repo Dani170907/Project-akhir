@@ -1,4 +1,4 @@
-h2>profile</h2>
+<h2>profile</h2>
 
 <p>Nama: <?= $tb_user['nama'] ?></p>
 <p>username: <?= $tb_user['username'] ?></p>
