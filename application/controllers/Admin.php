@@ -13,18 +13,25 @@ class Admin extends CI_Controller {
     }
 
     public function beranda() {
-        $this->load->view('templates/admin_header');
+        $data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array(); 
+
+        $this->load->view('templates/admin_header', $data);
         $this->load->view('admin');
     }
     
     public function pendaftaran() {
-        $this->load->view('templates/admin_header');
+        $data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array(); 
+
+        $this->load->view('templates/admin_header', $data);
         $this->load->view('pendaftaran');
     }
     
     public function event() {
+        $data['tb_user'] = $this->db->get_where('tb_user', ['username' => $this->session->userdata('username')])->row_array(); 
+
+        
         $this->load->model('EventModel');
-        $this->load->view('templates/admin_header');
+        $this->load->view('templates/admin_header', $data);
         $data['tb_jns_lomba'] = $this->EventModel->getEvents();
         $this->load->view('event', $data);
     }
