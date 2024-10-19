@@ -1,1 +1,1 @@
-<h1>Beranda</h1>
+<h1><strong><?= salam($tb_user['nama']) ?></strong> Selamat Datang kembali di Aplikasi Pendaftaran Lomba SMK Syafi'i Akrom</h1>

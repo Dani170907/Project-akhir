@@ -19,7 +19,7 @@
   
   function salam($nama) {
       $currentTime = getWaktu();
-      return "Selamat $currentTime, $nama!";
+      return "Halo $nama, Selamat $currentTime!";
   }
 
   $currentPage = uri_string();

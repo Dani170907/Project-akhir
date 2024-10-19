@@ -15,5 +15,6 @@ class Registrasi extends CI_Controller {
 
         // Redirect ke halaman login setelah berhasil menyimpan data
         redirect('Login');
+
     }
 }
