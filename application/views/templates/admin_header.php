@@ -30,7 +30,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+	<!-- SweetAlert2 JS -->
+	<script src="<?= base_url('assets/js/sweetalert2.all.min.js'); ?>"></script>
+    <!-- Tailwind CSS -->
     <link href="<?= base_url('assets/css/output.css'); ?>" rel="stylesheet">
     <title>Halaman Admin</title>
 </head>
@@ -66,7 +68,7 @@
 		</li>
 	</ul>
 	<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-500 hover:bg-blue-600  text-sm text-white font-bold  rounded-xl transition duration-200" href="<?= base_url() ?>Profile">Profile</a>
-	<a class="hidden lg:inline-block py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-50 font-semibold rounded-xl transition duration-200" href="<?= base_url() ?>Login/logout">Log Out</a>
+	<a class="hidden lg:inline-block py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-50 font-semibold rounded-xl transition duration-200" href="<?= base_url() ?>Login/logout" id="logoutBtn">Log Out</a>
 	</nav>
 	<!-- <h1 class="mt-10 text-center font-bold"><?= salam($tb_user['nama']) ?></h1><br> -->
 	<div class="navbar-menu relative z-50 hidden">
@@ -100,7 +102,7 @@
 					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Profile/">Profile</a>
 				</div>
 				<div class="pt-auto">
-					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Login/logout">Log Out</a>
+					<a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold leading-none bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Login/logout" id="logoutBtn">Log Out</a>
 				</div>
 			</div>
 		</nav>
@@ -148,6 +150,27 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 });
+
+document.getElementById('logoutBtn').addEventListener('click', function(event) {
+        event.preventDefault();
+
+        // Konfirmasi SweetAlert
+        Swal.fire({
+            title: 'Apakah Anda yakin?',
+            text: "Anda akan keluar dari akun ini!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Ya, keluar!',
+            cancelButtonText: 'Batal'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect ke URL logout jika dikonfirmasi
+                window.location.href = "<?= base_url('Login/logout') ?>";
+            }
+        });
+    });
 </script>
 
 
