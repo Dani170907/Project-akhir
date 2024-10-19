@@ -9,6 +9,10 @@ class EventModel extends CI_Model {
         return $this->db->get()->result_array();
     }
 
+    public function getLombaById($id) {
+        return $this->db->get_where('tb_jns_lomba', ['id' => $id])->row_array();
+    }
+
     public function tambahLomba() {
         $data = [
             "namaLomba" => $this->input->post('nama_lomba', true),

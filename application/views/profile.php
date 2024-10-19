@@ -4,3 +4,4 @@
 <p>username: <?= $tb_user['username'] ?></p>
 
 <a href="<?=base_url() ?>profile/editProfile">EDIT PROFIL</a>
+

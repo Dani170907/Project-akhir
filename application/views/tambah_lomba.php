@@ -13,9 +13,9 @@
 
     <form action="<?= base_url() ?>Tambah/simpan" method="post">
         <input type="text" name="nama_lomba" id="nama_lomba"><br>
-        <input type="text" name="penyelenggara" id="penyelenggara"><br>
+        <input type="text" name="penyelenggara" id="penyelenggara"><br> <br>
 
-        <button type="submit">Simpan</button>
+        <button type="submit">SIMPAN</button>
     </form>
 
 </body>

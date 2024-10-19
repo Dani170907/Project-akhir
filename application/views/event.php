@@ -44,8 +44,8 @@
                                 <div class="text-sm text-gray-500"><?= $event['penyelenggara'] ?></div>
                             </td>
                             <td class="px-6 py-4">
-                                <a href="#">
-                                    <svg
+                                <a href="<?= base_url() ?>Admin/editLomba/<?= $event['id'] ?>">
+                                <svg
                                         xmlns="http://www.w3.org/2000/svg"
                                         class="w-6 h-6 text-blue-400"
                                         fill="none"

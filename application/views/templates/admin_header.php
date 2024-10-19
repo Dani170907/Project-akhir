@@ -65,10 +65,10 @@
 			<li><a class="text-sm <?= ($currentPage == 'admin/event') ? 'text-blue-600 font-bold' : 'text-gray-400' ?> hover:text-gray-500" href="<?= base_url('admin/event') ?>">Event</a></li>
 		</li>
 	</ul>
-	<!-- <a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-50 font-semibold rounded-xl transition duration-200" href="<?= base_url() ?>Login/logout">Log Out</a> -->
 	<a class="hidden lg:inline-block lg:ml-auto lg:mr-3 py-2 px-6 bg-blue-500 hover:bg-blue-600  text-sm text-white font-bold  rounded-xl transition duration-200" href="<?= base_url() ?>Profile">Profile</a>
 	<a class="hidden lg:inline-block py-2 px-6 bg-gray-50 hover:bg-gray-100 text-sm text-gray-50 font-semibold rounded-xl transition duration-200" href="<?= base_url() ?>Login/logout">Log Out</a>
 	</nav>
+	<!-- <h1 class="mt-10 text-center font-bold"><?= salam($tb_user['nama']) ?></h1><br> -->
 	<div class="navbar-menu relative z-50 hidden">
 		<div class="navbar-backdrop fixed inset-0 bg-gray-800 opacity-25"></div>
 		<nav class="fixed top-0 left-0 bottom-0 flex flex-col w-5/6 max-w-sm py-6 px-6 bg-white border-r overflow-y-auto">
@@ -105,7 +105,7 @@
 			</div>
 		</nav>
 	</div>
-</body>
+	
 
 <script>
 // Burger menus
@@ -150,4 +150,4 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 </script>
 
-<h3 class="text-center"><i><?= salam($tb_user['nama']) ?></i></h3><br>
+

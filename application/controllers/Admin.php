@@ -41,4 +41,27 @@ class Admin extends CI_Controller {
         redirect('admin/event');
     }
 
+    public function editLomba($id) {
+        $this->load->model('EventModel');
+        $data['edit_lomba'] = $this->EventModel->getLombaById($id);
+
+        $this->load->view('templates/admin_header');
+        $this->load->view('edit_lomba', $data);
+    }
+
+    public function updateLomba($id) {
+        $data = [
+            "namaLomba" => $this->input->post('nama_lomba'),
+            "penyelenggara" => $this->input->post('penyelenggara')
+        ];
+        $this->db->where('id', $id);
+        $this->db->update('tb_jns_lomba', $data);
+    
+        redirect('admin/event');
+    }
+    
+    // public function pendaftaran(){
+        
+    // }
+
 }
