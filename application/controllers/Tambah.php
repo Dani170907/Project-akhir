@@ -12,6 +12,6 @@ class Tambah extends CI_Controller {
         $this->load->model('EventModel');
         $this->EventModel->tambahLomba(); // Panggil method model untuk menambah event
         $this->session->set_flashdata('success', 'Event berhasil ditambahkan');
-        redirect(base_url('Tambah/event'));
+        redirect(base_url('Admin/event'));
     }
 }
