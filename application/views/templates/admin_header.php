@@ -39,7 +39,7 @@
 
 <body class="bg-gray-100">
     <!-- Navigation Bar -->
-    <nav class="relative px-4 py-4 flex justify-between items-center bg-white ">
+    <nav class="relative mx-auto my-auto px-4 py-4 flex justify-between items-center bg-white shadow-lg">
         <a class="text-3xl font-bold leading-none" href="#">
             <img src="<?= base_url('assets/images/SA.png') ?>" alt="Logo" class="h-12">
         </a>
