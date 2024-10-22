@@ -8,10 +8,24 @@ class Tambah extends CI_Controller {
         $this->load->view('tambah_lomba');
     }
 
-    public function simpan() {
+    public function pendaftaran() {
         $this->load->model('EventModel');
-        $this->EventModel->tambahLomba(); // Panggil method model untuk menambah event
-        $this->session->set_flashdata('success', 'Event berhasil ditambahkan');
+        $data['tb_jns_lomba'] = $this->EventModel->getEvents();
+        $data['tb_pendaftaran'] = $this->db->get('tb_pendaftaran');
+
+        $this->load->view('templates/admin_header');
+        $this->load->view('tambah_pendaftaran', $data);
+    }
+
+    public function simpanPendaftaran() {
+        $this->load->model('PendaftaranModel');
+        $this->PendaftaranModel->tambahPendaftaran();
+        redirect(base_url('Admin/pendaftaran'));
+    }
+
+    public function simpanEvent() {
+        $this->load->model('EventModel');
+        $this->EventModel->tambahLomba();
         redirect(base_url('Admin/event'));
     }
 }

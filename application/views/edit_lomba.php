@@ -6,11 +6,10 @@
     <title>Edit Lomba</title>
 </head>
 <body>
-    <?php if (isset($edit_lomba)) : ?>
         <h1>Edit Lomba: <?= $edit_lomba['namaLomba'] ?></h1>
 
-        <form action="<?= base_url('Admin/updateLomba/' . $edit_lomba['id']) ?>" method="post">
-            <input type="hidden" name="id" value="<?= $edit_lomba['id'] ?>">
+        <form action="<?= base_url('Edit/updateLomba/' . $edit_lomba['idLomba']) ?>" method="post">
+            <input type="hidden" name="id_lomba" value="<?= $edit_lomba['idLomba'] ?>">
             
             <label for="nama_lomba">Nama Lomba</label>
             <input type="text" name="nama_lomba" value="<?= $edit_lomba['namaLomba'] ?>"> <br>
@@ -20,8 +19,6 @@
 
             <button type="submit">EDIT</button>
         </form>
-    <?php else : ?>
-        <p>Data lomba tidak ditemukan.</p>
-    <?php endif; ?>
+
 </body>
 </html>

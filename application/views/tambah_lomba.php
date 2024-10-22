@@ -11,7 +11,7 @@
         <p style="color: green;"><?= $this->session->flashdata('success'); ?></p>
     <?php endif; ?>
 
-    <form action="<?= base_url() ?>Tambah/simpan" method="post">
+    <form action="<?= base_url() ?>Tambah/simpanEvent" method="post">
         <input type="text" name="nama_lomba" id="nama_lomba"><br>
         <input type="text" name="penyelenggara" id="penyelenggara"><br> <br>
 
