@@ -30,7 +30,15 @@ class Edit extends CI_Controller {
 
     public function editPendaftaran($idPendaftaran) {
         $this->data['tb_jns_lomba'] = $this->EventModel->getEvents(); 
-        $this->data['edit_pendaftaran'] = $this->PendaftaranModel->getPendaftaranById($idPendaftaran);
+        $this->data['tb_pendaftaran'] = $this->PendaftaranModel->getPendaftaranById($idPendaftaran);
+    
+        // Cek apakah data pendaftaran ada
+        if (empty($this->data['tb_pendaftaran'])) {
+            // Jika tidak ada, redirect atau tampilkan pesan error
+            redirect('admin/pendaftaran'); // Atau tampilkan pesan error
+            return; // Hentikan eksekusi lebih lanjut
+        }
+    
         $this->load->view('templates/admin_header', $this->data);
         $this->load->view('edit_pendaftaran', $this->data);
     }
@@ -48,7 +56,7 @@ class Edit extends CI_Controller {
     }
 
     public function editLomba($idLomba) {
-        $this->data['edit_lomba'] = $this->EventModel->getLombaById($idLomba);
+        $this->data['tb_jns_lomba'] = $this->EventModel->getLombaById($idLomba);
         $this->load->view('templates/admin_header', $this->data);
         $this->load->view('edit_lomba', $this->data);
     }

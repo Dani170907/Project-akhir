@@ -6,16 +6,16 @@
     <title>Edit Lomba</title>
 </head>
 <body>
-        <h1>Edit Lomba: <?= $edit_lomba['namaLomba'] ?></h1>
+        <h1>Edit Lomba: <?= $tb_jns_lomba['namaLomba'] ?></h1>
 
-        <form action="<?= base_url('Edit/updateLomba/' . $edit_lomba['idLomba']) ?>" method="post">
-            <input type="hidden" name="id_lomba" value="<?= $edit_lomba['idLomba'] ?>">
+        <form action="<?= base_url('Edit/updateLomba/' . $tb_jns_lomba['idLomba']) ?>" method="post">
+            <input type="hidden" name="id_lomba" value="<?= $tb_jns_lomba['idLomba'] ?>">
             
             <label for="nama_lomba">Nama Lomba</label>
-            <input type="text" name="nama_lomba" value="<?= $edit_lomba['namaLomba'] ?>"> <br>
+            <input type="text" name="nama_lomba" value="<?= $tb_jns_lomba['namaLomba'] ?>"> <br>
 
             <label for="penyelenggara">Penyelenggara</label>
-            <input type="text" name="penyelenggara" value="<?= $edit_lomba['penyelenggara'] ?>"> <br> <br>
+            <input type="text" name="penyelenggara" value="<?= $tb_jns_lomba['penyelenggara'] ?>"> <br> <br>
 
             <button type="submit">EDIT</button>
         </form>

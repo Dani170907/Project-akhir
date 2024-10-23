@@ -7,25 +7,29 @@
 </head>
 <body>
 
-    <form action="<?= base_url('Edit/updatePendaftaran/' . $edit_pendaftaran['idPendaftaran']); ?>" method="post">
+    <?php if (!empty($tb_pendaftaran)): ?>
+        <form action="<?= base_url('Edit/updatePendaftaran/' . $tb_pendaftaran['idPendaftaran']); ?>" method="post">
 
         <select name="id_lomba" id="lomba">
             <option value="" disabled selected>Pilih Lomba</option>
             <?php foreach($tb_jns_lomba as $lomba) : ?>
-                <option value="<?= $lomba['id'] ?>"><?= $lomba['namaLomba'] ?></option>
+                <option value="<?= $lomba['idLomba'] ?>"><?= $lomba['namaLomba'] ?></option>
             <?php endforeach; ?>
         </select>
 
-        <label for="nama_pendaftar">Nama Pendaftar:</label>
-        <input type="text" name="nama_pendaftar" value="<?= isset($edit_pendaftaran['namaPendaftar']) ? $edit_pendaftaran['namaPendaftar'] : ''; ?>" required>
+            <label for="nama_pendaftar">Nama Pendaftar:</label>
+            <input type="text" name="nama_pendaftar" value="<?= isset($tb_pendaftaran['namaPendaftar']) ? $tb_pendaftaran['namaPendaftar'] : ''; ?>" required>
 
-        <label for="kelas">Kelas:</label>
-        <input type="text" name="kelas" value="<?= isset($edit_pendaftaran['kelas']) ? $edit_pendaftaran['kelas'] : ''; ?>" required>
+            <label for="kelas">Kelas:</label>
+            <input type="text" name="kelas" value="<?= isset($tb_pendaftaran['kelas']) ? $tb_pendaftaran['kelas'] : ''; ?>" required>
 
-        <label for="no_hp">No HP:</label>
-        <input type="text" name="no_hp" value="<?= isset($edit_pendaftaran['noHp']) ? $edit_pendaftaran['noHp'] : ''; ?>" required>
+            <label for="no_hp">No HP:</label>
+            <input type="text" name="no_hp" value="<?= isset($tb_pendaftaran['noHp']) ? $tb_pendaftaran['noHp'] : ''; ?>" required>
 
-        <button type="submit">Update</button>
-    </form>
+            <button type="submit">Update</button>
+        </form>
+    <?php else: ?>
+        <p>Data pendaftaran tidak ditemukan.</p>
+    <?php endif; ?>
 </body>
 </html>

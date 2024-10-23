@@ -29,7 +29,7 @@ class PendaftaranModel extends CI_Model {
 
     public function updatePendaftaran($idPendaftaran) {
         $data = [
-            "idLomba" => $this->input->post('idLomba', true),
+            "idLomba" => $this->input->post('id_lomba', true),
             "namaPendaftar" => $this->input->post('nama_pendaftar', true),
             "kelas" => $this->input->post('kelas', true),
             "noHp" => $this->input->post('no_hp', true),
@@ -39,8 +39,8 @@ class PendaftaranModel extends CI_Model {
     }
     
 
-    public function getPendaftaranById($idLomba) {
-        return $this->db->get_where('tb_pendaftaran', ['idLomba' => $idLomba])->row_array();
+    public function getPendaftaranById($idPendaftaran) {
+        return $this->db->get_where('tb_pendaftaran', ['idPendaftaran' => $idPendaftaran])->row_array();
     }
     
 
