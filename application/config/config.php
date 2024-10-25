@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/pj-L11';
+$config['base_url'] = 'http://200.100.0.13/pj-L11';
 
 /*
 |--------------------------------------------------------------------------

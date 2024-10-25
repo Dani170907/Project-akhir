@@ -32,11 +32,9 @@ class Edit extends CI_Controller {
         $this->data['tb_jns_lomba'] = $this->EventModel->getEvents(); 
         $this->data['tb_pendaftaran'] = $this->PendaftaranModel->getPendaftaranById($idPendaftaran);
     
-        // Cek apakah data pendaftaran ada
         if (empty($this->data['tb_pendaftaran'])) {
-            // Jika tidak ada, redirect atau tampilkan pesan error
-            redirect('admin/pendaftaran'); // Atau tampilkan pesan error
-            return; // Hentikan eksekusi lebih lanjut
+            redirect('admin/pendaftaran'); 
+            return; 
         }
     
         $this->load->view('templates/admin_header', $this->data);
