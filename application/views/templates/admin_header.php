@@ -99,7 +99,7 @@
             </div>
             <div class="mt-auto">
                 <div class="pt-6">
-                    <a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Profile/">Profile</a>
+                    <a class="block px-4 py-3 mb-3 leading-loose text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Admin/profile">Profile</a>
                 </div>
                 <div class="pt-auto">
                     <a class="block px-4 py-3 mb-3 leading-normal text-xs text-center font-semibold bg-gray-50 hover:bg-gray-100 rounded-xl" href="<?= base_url() ?>Login/logout" id="logoutBtn">Log Out</a>

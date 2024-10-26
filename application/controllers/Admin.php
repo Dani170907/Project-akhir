@@ -16,6 +16,11 @@ class Admin extends CI_Controller {
         $this->beranda();
     }
 
+    public function profile() {
+        $this->load->view('templates/admin_header', $this->data);
+        $this->load->view('profile', $this->data);   
+    }
+
     public function beranda() {
         $this->load->view('templates/admin_header', $this->data);
         $this->load->view('admin');
