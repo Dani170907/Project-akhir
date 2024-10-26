@@ -1,12 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Lomba</title>
-</head>
-<body>
-
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
 
 <div class="relative z-10 bg-white p-8 rounded-md shadow-lg w-full max-w-sm lg:max-w-lg">
@@ -19,7 +10,7 @@
                 name="nama_lomba" id="nama_lomba" type="text" placeholder="Input nama lomba">
         </div>
         <div class="mb-4">
-            <label class="block text-gray-700 font-bold mb-2" for="penyelenggara">penyelenggara</label>
+            <label class="block text-gray-700 font-bold mb-2" for="penyelenggara">Penyelenggara</label>
             <input value="<?= $tb_jns_lomba['penyelenggara'] ?>"
                 class="appearance-none border rounded-md py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline w-full"
                 name="penyelenggara" id="penyelenggara" type="text" placeholder="Input penyelenggara">
