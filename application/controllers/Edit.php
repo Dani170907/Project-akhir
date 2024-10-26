@@ -91,6 +91,4 @@ class Edit extends CI_Controller {
         redirect('admin/profile');
     }
     
-    
-
 }
