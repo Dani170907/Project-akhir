@@ -57,7 +57,6 @@
 
 <!-- Script SweetAlert2 -->
 <script>
-
 function confirmDelete(url) {
     Swal.fire({
         title: "Apakah kamu yakin?",
@@ -69,19 +68,15 @@ function confirmDelete(url) {
         confirmButtonText: "Ya, hapus data!"
     }).then((result) => {
         if (result.isConfirmed) {
-            // Tampilkan alert sukses terlebih dahulu
             Swal.fire({
                 title: "Deleted!",
                 text: "Data berhasil dihapus.",
                 icon: "success"
-            });
-            // Tunggu selama 2 detik sebelum redirect
-            setTimeout(() => {
+            }).then(() => {
                 window.location.href = url;
-            }, 2000);  // Delay 2 detik
+            });
         }
     });
 }
 </script>
 
-                            

@@ -6,7 +6,7 @@
     <title>Halaman Registrasi</title>
     <link href="<?= base_url('assets/css/output.css'); ?>" rel="stylesheet">
     <script src="<?= base_url('assets/js/sweetalert2.all.min.js'); ?>"></script>
-    </head>
+</head>
 <body>
 
 <div class="bg-gray-100 min-h-screen flex items-center justify-center">
@@ -53,27 +53,23 @@
 </div>
 
 <script>
-    // Fungsi untuk menampilkan SweetAlert2
-    function showAlert(title, text, icon) {
+    function showAlert(title, text, icon, callback) {
         Swal.fire({
             title: title,
             text: text,
             icon: icon,
             confirmButtonText: 'OK'
-        });
+        }).then(callback);
     }
 
-    // Validasi dan penanganan form
     function validateForm() {
-        const isSuccess = true; // ganti dengan hasil dari server
+        showAlert('Berhasil!', 'Pendaftaran berhasil!', 'success', () => {
+            setTimeout(() => {
+                window.location.href = "<?= base_url('Login'); ?>";
+            }, 2000);
+        });
 
-        if (isSuccess) {
-            showAlert('Berhasil!', 'Pendaftaran berhasil!', 'success');
-            return true; // lanjutkan pengiriman form
-        } else {
-            showAlert('Gagal!', 'Pendaftaran gagal. Silakan coba lagi.', 'error');
-            return false; // batalkan pengiriman form
-        }
+        return false;
     }
 </script>
 

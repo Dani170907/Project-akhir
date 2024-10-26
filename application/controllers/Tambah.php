@@ -20,12 +20,14 @@ class Tambah extends CI_Controller {
     public function simpanPendaftaran() {
         $this->load->model('PendaftaranModel');
         $this->PendaftaranModel->tambahPendaftaran();
-        redirect(base_url('Admin/pendaftaran'));
+        
+        redirect('Admin/pendaftaran');
     }
 
     public function simpanEvent() {
         $this->load->model('EventModel');
         $this->EventModel->tambahLomba();
-        redirect(base_url('Admin/event'));
+
+        redirect('Admin/event');
     }
 }

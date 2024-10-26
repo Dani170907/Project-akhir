@@ -9,10 +9,8 @@ class Registrasi extends CI_Controller {
 
     public function simpan() {
         $this->load->model('UserModel');
-        
         $this->UserModel->simpanUser();
 
         redirect('Login');
-
     }
 }
